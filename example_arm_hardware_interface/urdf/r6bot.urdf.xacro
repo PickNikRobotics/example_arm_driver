@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<robot name="r6bot" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:arg name="hardware_interface" default="mock"/>
+
+  <xacro:include filename="$(find example_arm_description)/urdf/r6bot_urdf_macro.xacro"/>
+  <xacro:r6bot_description
+  />
+
+  <xacro:if value="${'$(arg hardware_interface)' == 'mock'}">
+    <xacro:include filename="$(find example_arm_hardware_interface)/urdf/r6bot_mock_ros2_control_macro.xacro"/>
+    <xacro:r6bot_control />
+  </xacro:if>
+
+  <link name="world"/>
+  <joint name="base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+</robot>
