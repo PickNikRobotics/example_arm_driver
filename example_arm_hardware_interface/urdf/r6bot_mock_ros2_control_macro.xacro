@@ -34,12 +34,24 @@
         <state_interface name="velocity"/>
       </joint>
       <sensor name="${prefix}tcp_fts_sensor">
-        <state_interface name="force.x"/>
-        <state_interface name="force.y"/>
-        <state_interface name="force.z"/>
-        <state_interface name="torque.x"/>
-        <state_interface name="torque.y"/>
-        <state_interface name="torque.z"/>
+        <state_interface name="force.x">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="force.y">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="force.z">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="torque.x">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="torque.y">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="torque.z">
+          <param name="initial_value">0.0</param>
+        </state_interface>
         <param name="frame_id">${prefix}ft_frame</param>
       </sensor>
 
