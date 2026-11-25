@@ -1,46 +1,46 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
-  <xacro:macro name="r6bot_control">
-    <ros2_control name="r6bot" type="system">
-      <joint name="joint_1">
+  <xacro:macro name="r6bot_control" params="prefix:=''">
+    <ros2_control name="${prefix}r6bot" type="system">
+      <joint name="${prefix}joint_1">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint>
-      <joint name="joint_2">
+      <joint name="${prefix}joint_2">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint>
-      <joint name="joint_3">
+      <joint name="${prefix}joint_3">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint>
-      <joint name="joint_4">
+      <joint name="${prefix}joint_4">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint>
-      <joint name="joint_5">
+      <joint name="${prefix}joint_5">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint>
-      <joint name="joint_6">
+      <joint name="${prefix}joint_6">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint>
-      <sensor name="tcp_fts_sensor">
+      <sensor name="${prefix}tcp_fts_sensor">
         <state_interface name="force.x"/>
         <state_interface name="force.y"/>
         <state_interface name="force.z"/>
         <state_interface name="torque.x"/>
         <state_interface name="torque.y"/>
         <state_interface name="torque.z"/>
-        <param name="frame_id">ft_frame</param>
+        <param name="frame_id">${prefix}ft_frame</param>
       </sensor>
 
       <hardware>
